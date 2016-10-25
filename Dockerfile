@@ -18,8 +18,9 @@ RUN addgroup --system xusers \
 			--ingroup xusers \
 			--quiet \
 			xclient \
-  && echo 'xclient:xclient' | chpasswd \
-  && usermod -aG sudo xclient
+  && echo 'xclient:xclient' | chpasswd
+ 
+RUN usermod -aG sudo xclient
 
 # Install packages required for connecting against X Server
 RUN apt-get update && apt-get install -y --no-install-recommends \
