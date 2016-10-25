@@ -20,6 +20,7 @@ RUN addgroup --system xusers \
 			xclient \
   && echo 'xclient:xclient' | chpasswd
  
+#
 RUN usermod -aG sudo xclient
 
 # Install packages required for connecting against X Server
