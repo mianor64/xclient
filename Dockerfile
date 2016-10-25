@@ -17,8 +17,8 @@ RUN addgroup --system xusers \
 			--gecos "user for running an xclient application" \
 			--ingroup xusers \
 			--quiet \
-			xclient
-#RUN echo 'xclient:xclient' | chpasswd
+			xclient \
+  && echo 'xclient:xclient' | chpasswd
 
 # Install packages required for connecting against X Server
 RUN apt-get update && apt-get install -y --no-install-recommends \
